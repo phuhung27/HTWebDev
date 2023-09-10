@@ -1,5 +1,7 @@
 # Creamy Gochujang Pasta
 
+## A delicious fusion between Asian and Italian cuisine what will keep you craving more. 
+
 ![gochujang pasta](Creamy-Gochujang-Pasta-1.jpg)
 
 ## Ingredients:
