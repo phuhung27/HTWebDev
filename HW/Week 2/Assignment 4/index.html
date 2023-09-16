@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html>
+  <head> 
+    <meta charset="utf-8" />
+    <title>Perfect Pasta Recipe</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta
+      name="description"
+      content="Recipe Website HTML Markup"
+    />
+    <meta name="keywords" content="HTML, Semantic HTML, Tutorial" />
+    <meta name="Hung Truong" content="Pasta Recipe" />
+    <style type="text/CSS">
+        h1 {
+          font-family: 'Monaco', sans-serif;
+        }
+  
+        /* for classes */
+        .recipe_photo {
+          border: 5px solid rgb(189, 108, 21);
+          width: 600px;
+          height: 500px;
+        }
+
+        .add_rec_photo {
+            border: 3px solid black;
+            width: 200px;
+            height: 200px;
+        }
+  
+        /* for IDs */
+        #title {
+          margin: 0 auto;
+          text-align: left;
+          background-color: rgba(218, 218, 218, 0.5);
+        }
+      </style>
+  </head>
+
+  
+  <body>
+    <header>
+        <nav>
+            <ul>
+                <a href="#">About</a>
+                <a href="#">Recipes</a>
+                <a href="#">Blog</a>
+                <a href="#">Contact</a>
+                <input type="search">
+                <!-- Code for search bar, learnt from W3Schools -->
+                <input type="image" 
+                src="#" 
+                title="company logo">
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <figure>
+            <img src="https://twoplaidaprons.com/wp-content/uploads/2022/09/gochujang-pasta-thumbnail.jpg" class="recipe_photo"/>
+            <figcaption><em>Amazing pasta, made by <strong>Hung</strong></em></figcaption>
+        </figure>
+
+        <h4><em>Reviews:</em> 5/5</h4>
+        <h4><em>Cook Time:</em> 15 mintues</h4>
+        <h4><em>Total Servings:</em> 4 people</h4>
+        <!-- Stats description for recipe -->
+
+        <br/>
+
+        <h1 id="title"> Recipe Title</h1>
+        <p> Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor 
+            incididunt ut labore et dolore magna aliqua. Egestas purus viverra 
+            accumsan in nisl nisi.
+        </p>
+
+        <br/>
+
+        <h2> Ingredients</h2>
+        <ul>
+            <li>Pasta</li>
+            <li>Butter</li>
+            <li>Garlic & onions</li>
+            <li>Gochujang paste</li>
+            <li>Heavy cream</li>
+            <li>Brown sugar</li>
+            <li>Green onions</li>
+            <li>Parmesan cheese</li>
+            <li>Steak</li>
+        </ul>
+        <img src="https://twoplaidaprons.com/wp-content/uploads/2022/09/gochujang-pasta-ingredients.jpg" 
+        width="350" height="350">
+
+        <br/>
+
+        <h2>Instructions</h2>
+        <ol>
+            <figure>
+                <li>Add a bit of salt to a pot of water and start to boil it.
+                    Add your pasta and cook until al-dente.
+                </li>
+                <img src="https://placehold.co/200x200">
+            </figure>
+
+            <figure>
+                <li>While the pasta is boiling, add butter to your pan.
+                    Once the butter has melted, add garlic and onions.
+                </li>
+                <img src="https://placehold.co/200x200">
+            </figure>
+            
+            <figure>
+                <li>Cut up your steak into slices and fry it for around 5 mintues.</li>
+                <img src="https://placehold.co/200x200">
+            </figure>
+
+            <figure>
+                <li>Add some pasta water. After, you will add a spoon of gochujang paste and heavy cream.
+                    Stir nicely.
+                </li>
+                <img src="https://placehold.co/200x200">
+            </figure>
+
+            <figure>
+                <li>Once your pasta is done, you can drain the water. Add the pasta into 
+                    the pan once the steak is cooked nicely.
+                </li>
+                <img src="https://placehold.co/200x200">
+            </figure>
+
+            <figure>
+                <li>Grade some parmesan cheese on top and stir the pasta around so it is fully absorbed 
+                    in the sauce. 
+                    <br/>Now enjoy!
+                </li>
+                <img src="https://placehold.co/200x200">
+            </figure>
+        </ol>
+
+    </main>
+
+    <aside>
+        <nav>
+            <h3> Check out these recipes too!</h3>
+            <ul>
+                <figure>
+                    <li><a href="#" target="_self">Creamy Mushroom Pasta</a></li>
+                    <br/>
+                    <img src="https://placehold.co/200x200" class="add_rec_photo"> 
+                </figure>
+
+                <figure>
+                    <li><a href="#" target="_self">Spaghetti Carbonara</a></li>
+                    <br/>
+                    <img src="https://placehold.co/200x200" class="add_rec_photo">   
+                </figure>   
+            </ul>
+        </nav>
+    </aside>
+
+    <footer>
+        © Perfect Pasta
+        <p>Folllow us here: </p>
+        <a href="#" target="_blank">Facebook</a> 
+        <a href="#" target="_blank">Twitter</a>
+
+        <p> Subscribe to our newsletter here: </p>
+        <a href="#" target="_blank">Newsletter</a> 
+    </footer>
+
+  </body>
+  
+</html>
+
+        
