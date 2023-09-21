@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <title>Simple Navbar</title>
+        <style type="text/css">
+            * {
+                /* star means everything */
+                margin: 0;
+                padding: 0;
+            }
+
+            body {
+                font-family: "Helvetica", Arial, sans-serif;
+            }
+
+            ul{
+                /* remove all bullet points */
+                list-style-type: none;
+                overflow: hidden;
+                background-color: #999;
+
+                /* make parent elements font size 0 since are using inline block to stack our list
+                inline block stacks each element like a letter in a word/paragraph, making font size 0 
+                ensures no extra margins */
+                font-size: 0;
+            }
+
+            li {
+                display: inline-block;
+                /* 1 rem = 16px */
+                font-size: 1rem;
+            }
+
+            li a{
+                /* the clickalbe area is larger than just the text --> get rid of inline and display block*/
+                display: block;
+                text-align: center;
+                width: 100px;
+                padding: 10px;
+
+                /* remove underline on the link text */
+                text-decoration: none;
+                /* change the link color
+                link is blue, once clicked is purple */
+
+                /* font color */
+                color: #333; 
+            }
+
+            /* use . to go into that tag, css specificity 
+            active indicates that you are on this page currently */
+            li a.active{
+                background-color: #888;
+            }
+
+            /* when hover, change text color to white and background darker */
+            li a:hover {
+                background-color: #111;
+                color: white;
+            }
+
+        </style>
+    </head>
+
+    <body>
+        <nav>
+            <ul>
+                <li><a href="#" class="active">Link 1</a></li>
+                <li><a href="#" >Link 2</a></li>
+                <li><a href="#" >Link 3</a></li>
+                <li><a href="#" >Link 4</a></li>
+            </ul>
+        </nav>
+
+
+
+    </body>
+</html>

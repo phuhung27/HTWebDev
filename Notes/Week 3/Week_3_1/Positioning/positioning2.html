@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <title>Simple Navbar</title>
+        <style type="text/css">
+            body {
+                font-family: "Helvetica", Arial, sans-serif;
+                margin: 0;
+            }
+
+            ul{
+                /* remove all bullet points */
+                list-style-type: none;
+                overflow: hidden;
+                background-color: #999;
+
+                /* make parent elements font size 0 since are using inline block to stack our list
+                inline block stacks each element like a letter in a word/paragraph, making font size 0 
+                ensures no extra margins */
+                font-size: 0;
+                padding: 0;
+            }
+
+            li {
+                display: inline-block;
+                /* 1 rem = 16px */
+                font-size: 1rem;
+            }
+
+            li a{
+                /* the clickalbe area is larger than just the text --> get rid of inline and display block*/
+                display: block;
+                text-align: center;
+                width: 100px;
+                padding: 10px;
+
+                /* remove underline on the link text */
+                text-decoration: none;
+                /* change the link color
+                link is blue, once clicked is purple */
+
+                /* font color */
+                color: #333; 
+            }
+
+            /* use . to go into that tag, css specificity 
+            active indicates that you are on this page currently */
+            li a.active{
+                background-color: #888;
+            }
+
+            /* when hover, change text color to white and background darker */
+            li a:hover {
+                background-color: #111;
+                color: white;
+            }
+
+            /* Positioning */
+            nav.fixed-nav {
+                position: fixed;
+                top: 0;
+                left: 0;
+                right: 0;
+            }
+
+            /* # to style IDs */
+            #abs {
+                background-color: red;
+                width: 100px;
+                height: 100px;
+                overflow: hidden;
+
+                position: absolute;
+                top: 0px;
+                left: 50%;
+                /* z index changes layering, in front or behind */
+                z-index: -100;
+            }
+
+            #rel {
+                background-color: green;
+                width: 100px;
+                height: 100px;
+                overflow: hidden;
+
+                /* relative to where it would have been anyways
+                that's why if you have top: 0, it would be in same position */
+                position: relative;
+                top: -100px;
+                right: -100px;
+            }
+
+            #rel-parent {
+                width: 500px;
+                height: 500px;
+                background-color: purple;
+
+                position: relative;
+            }
+
+            #abs-child {
+                width: 100px;
+                height: 100px;
+                background-color: yellow;
+
+                position: absolute;
+                right: 0;
+            }
+
+        </style>
+    </head>
+
+    <body>
+        <nav class="fixed-nav">
+            <ul>
+                <li><a href="#" class="active">Link 1</a></li>
+                <li><a href="#" >Link 2</a></li>
+                <li><a href="#" >Link 3</a></li>
+                <li><a href="#" >Link 4</a></li>
+            </ul>
+        </nav>
+
+        <main>
+            <p>
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor 
+                incididunt ut labore et dolore magna aliqua. Maecenas pharetra convallis posuere morbi leo.
+                 Lorem donec massa sapien faucibus et. Sollicitudin tempor id eu nisl nunc mi 
+                 ipsum faucibus. Purus semper eget duis at tellus at. Magna fringilla urna porttitor 
+                 rhoncus dolor. Turpis in eu mi bibendum neque egestas. Integer eget aliquet nibh praesent 
+                 tristique magna. Enim ut sem viverra aliquet eget. Justo eget magna fermentum iaculis 
+                 eu non diam. Faucibus turpis in eu mi bibendum neque egestas. Id velit ut tortor pretium. 
+                 Vitae congue eu consequat ac felis donec et odio pellentesque.
+            </p>
+
+            <p>
+                Faucibus pulvinar elementum integer enim neque volutpat ac tincidunt vitae.
+                 Congue quisque egestas diam in arcu. Cras fermentum odio eu feugiat pretium nibh ipsum 
+                 consequat nisl. Duis at consectetur lorem donec massa sapien faucibus. 
+                 Sed lectus vestibulum mattis ullamcorper velit sed ullamcorper morbi. In eu mi bibendum 
+                 neque egestas congue. Enim tortor at auctor urna nunc id cursus metus. Posuere ac ut
+                  consequat semper viverra nam libero justo laoreet. Tortor vitae purus faucibus ornare. 
+                  Consectetur adipiscing elit pellentesque habitant morbi tristique senectus et netus. 
+                  Pulvinar elementum integer enim neque.
+            </p>
+
+            <div id="abs">
+                Absolute positioning with no parent positioning defined.
+            </div>
+
+            <div id="rel">
+                Relative positioned diev with no parent positioning defined.
+            </div>
+
+            <div id="rel-parent">
+                <div id="abs-child"></div>
+
+            </div>
+        </main>
+
+
+
+    </body>
+</html>

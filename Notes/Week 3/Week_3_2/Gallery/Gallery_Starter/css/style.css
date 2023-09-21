@@ -1,0 +1,55 @@
+/* Importing google font */
+@import url('https://fonts.googleapis.com/css2?family=Kaushan+Script&display=swap');
+
+
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    background: url(../img/bg.jpg) 
+    no-repeat 
+    /* center in X */
+    center 
+    /* center in Y */
+    center 
+    fixed;
+
+    background-size: cover;
+}
+
+/* font family usage... copied from google */
+body {
+    font-family: 'Kaushan Script', cursive;
+}
+
+.container {
+    width: 900px;
+    margin: 0 auto;
+}
+
+.polaroid {
+    width: 240px;
+    display: inline-block;
+    margin: 20px;
+    position: relative;
+}
+
+/* whenever there is img inside polaroid tag */
+.polaroid img {
+    width: 100%;
+    height: auto;
+    border: 10px solid cornsilk;
+    border-bottom-width: 45px;
+}
+
+.polaroid p {
+    position: absolute;
+    text-align: center;
+    /* 260 to account for 10px margin */
+    width: 260px;
+    bottom: 14px;
+    color: #fb0808;
+}
