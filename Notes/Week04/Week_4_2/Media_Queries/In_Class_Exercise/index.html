@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+            <!-- Ensures proper responsive behavior -->
+        <title>Media Queries</title>
+        <style type="text/css">
+            body {
+                margin: 0;
+                padding: 0;
+                font-family: Helvetica, Arial, sans-serif;
+                background-color: darkslategray;
+            }
+
+            img {
+                width: 100%;
+                height: auto;
+            }
+
+            /* For desktop size */
+            header.header_flex {
+                display: flex;
+                flex-direction: row;
+                justify-content: space-between;
+                align-items: center;
+            }
+
+            nav.main_nav ul {
+                list-style-type: none;
+                display: flex;
+                padding: 0;
+            }
+
+            .main_nav li {
+                padding: 1rem;
+            }
+
+            .main_nav a {
+                display: block;
+                padding: 2rem;
+                width: 3rem;
+            }
+
+            .flex_container {
+                display: flex;
+                flex-direction: row;
+                align-items: center;
+                padding: 2rem;
+                
+            }
+
+            .space_between {
+                justify-content: space-between;
+                background-color: darksalmon;
+            }
+
+            .space_around {
+                justify-content: space-around;
+                background-color: bisque;
+            }
+
+            .thumb {
+                min-height: 10rem;
+                width: 22%;
+                background-color: brown;
+                border: 5px solid white;
+            }
+
+            /* For tablet screen */
+            @media only screen and (min-width: 768px) and (max-width: 1024px) {
+                /* Like if statement, if is screen and is range of tablet size of a tablet */
+                body {
+                    background-color: green;
+                }
+
+                .flex_container {
+                    max-width: 1024px;
+                    flex-wrap: wrap;
+                }
+
+                /* making thumbnails stack only 2 wide, instead of 4 as on desktop */
+                .thumb {
+                    width: 45%;
+                    flex-grow: 0;
+                    flex-shrink: 0;
+                    margin: 1% 0;
+                }
+            }
+
+            /* For phone screen */
+            @media only screen and (max-width: 767px) {
+                body {
+                    background-color: orange;
+                }
+
+                header.header_flex {
+                    flex-direction: column;
+                }
+
+                nav.main_nav ul {
+                    flex-direction: column;
+                }
+
+                .flex_container {
+                    width: 100%;
+                    flex-direction: column;
+                    padding: 0;
+                }
+
+                .thumb {
+                    width: 90%;
+                    margin: 2rem 0;
+                }
+            }
+
+        </style>
+    </head>
+
+    <body>
+        <header class="header_flex">
+            <!-- Logo on left -->
+            <h1>Logo</h1>
+            <!-- Nav on right -->
+            <nav class="main_nav">
+                <ul>
+                    <li><a href="#">Link 1</a></li>
+                    <li><a href="#">Link 2</a></li>
+                    <li><a href="#">Link 3</a></li>
+                </ul>
+            </nav>
+        </header>
+
+        <div class="flex_container space_between">
+            <div class="thumb"><img src="https://placehold.co/300x200" alt="placeholder image" /></div>
+            <div class="thumb"><img src="https://placehold.co/300x200" alt="placeholder image" /></div>
+            <div class="thumb"><img src="https://placehold.co/300x200" alt="placeholder image" /></div>
+            <div class="thumb"><img src="https://placehold.co/300x200" alt="placeholder image" /></div>
+        </div>
+
+        <div class="flex_container space_around">
+            <div class="thumb"></div>
+            <div class="thumb"></div>
+            <div class="thumb"></div>
+            <div class="thumb"></div>
+        </div>
+
+
+
+    </body>
+</html>
