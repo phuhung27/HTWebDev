@@ -1,0 +1,219 @@
+@import url('https://fonts.googleapis.com/css2?family=EB+Garamond:wght@400;600&display=swap');
+
+html, body {
+    margin: 0;
+    font-family: 'EB Garamond', sans-serif;
+}
+
+h3 {
+    font-size: 2rem;
+}
+
+/* NAVBAR */
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 100px;
+    width: 100%;
+    border: solid 2px black;
+}
+
+header img {
+    height: 100%;
+}
+
+nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center; /* Center-align the items horizontally */
+    height: 100px;
+    /* background-color: aliceblue; */
+}
+
+nav li {
+    font-size: 1.25rem;
+    width: 150px; 
+    text-align: center; 
+}
+
+nav a {
+    text-decoration: none;
+    color: #333;
+    display: flex; /* Use flexbox to center text */
+    justify-content: center; /* Center horizontally */
+    align-items: center; /* Center vertically */
+    transition: all 1s;
+    height: 100px; /* Set the height to 100% */
+}
+
+nav a:hover {
+    background-color: rgba(32, 195, 73, 0.7);
+}
+
+nav li a.active {
+    text-decoration: underline;
+}
+
+/* ------------------------------------------------------------------------------------------- */
+/* About Page */
+.container {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    margin-top: 2%;
+}
+
+.container article {
+    width: 40%;
+}
+article img {
+    width: 60%;
+    height: auto;
+    margin: 2% 0 0 20%;
+}
+
+.description {
+    width: 40%;
+}
+
+.description p {
+    font-size: 1.25rem;
+}
+
+/* ------------------------------------------------------------------------------------------- */
+/* Resume Page */
+.container2 {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 2%;
+}
+
+.personal_info {
+    text-align: center;
+    font-size: 1.25rem;
+    width: 30%;
+}
+
+article.view_resume {
+    width: 10%;
+}
+
+/* View Resume Button */
+.view_resume {
+    background-color: rgb(19, 154, 78);
+    text-align: center;
+    padding: 10px;
+    margin-top: 20px;
+}
+
+.view_resume a {
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+    font-size: 1.25rem;
+}
+
+/* ------------------------------------------------------------------------------------------- */
+/* Interests Page */
+.container2 p {
+    font-size: 1.25rem;
+}
+
+.slideshow {
+    margin: 2% 2%;
+    width: 50%; /* Adjust the width as needed */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3); /* Add a subtle shadow effect */
+    border-radius: 30px;
+    padding: 10px; /* Add padding to create some space around the image */
+    text-align: center;
+    transition: all 1s ease-in-out; 
+}
+
+.slideshow:hover {
+    transform: scale(1.1);
+}
+
+/* ------------------------------------------------------------------------------------------- */
+/* Connect Page */
+
+
+
+
+
+/* ------------------------------------------------------------------------------------------- */
+/* Media Queries */
+
+/* For phone */
+
+@media screen and (max-width: 767px) {
+    .container {
+        flex-direction: column; /* Stack elements vertically */
+        margin-top: 80px; /* Add a top margin to push the container down */
+    }
+
+    .container article,
+    .description {
+        width: 80%;
+        margin: 0 auto;
+    }
+
+    article img {
+        width: 100%;
+        margin: 20px 0; /* margin top */
+    }
+
+    header {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+    }
+
+    nav li {
+        text-align: center;
+        padding: 10px;
+        width: 25%;
+    }
+
+    /* ------------------------------------------------------- */
+    /* Resume page */
+    .container2 {
+        margin-top: 80px;
+    }
+
+    .personal_info {
+        width: 100%;
+    }
+
+    article.view_resume {
+        width: 30%; 
+    }
+
+    /* ------------------------------------------------------- */
+    /* Interests page */
+
+    .slideshow, .slideshow_pics {
+        width: 80%;
+    }
+
+    /* ------------------------------------------------------- */
+    /* Connect page */
+    form {
+        display: flex;
+        flex-direction: column;
+    }
+
+    input {
+        margin-bottom: 20px;
+    }
+}
