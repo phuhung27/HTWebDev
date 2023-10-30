@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Random Hello Generator</title>
+
+    <script type="text/javascript">
+      let words = [
+        "Namaste",
+        "Guten tag",
+        "Aloha",
+        "Bonjour",
+        "Ciao",
+        "Hola",
+        "Xin Chao",
+      ];
+
+      let myBtn;
+
+      document.addEventListener("DOMContentLoaded", function () {
+        document
+          .getElementById("myBtn")
+          .addEventListener("click", generateRandomWord);
+      });
+
+      function generateRandomWord() {
+        let i = Math.floor(Math.random() * words.length); //choose random word within index
+        let randomWord = words[i]; //assign that random word to a variable called "randomWord"
+
+        document.getElementById("wordDisplay").textContent = randomWord;
+      }
+    </script>
+  </head>
+
+  <body>
+    <h1>Random Hello Generator</h1>
+    <button id="myBtn">Generate Random Hello</button>
+    <p id="wordDisplay">Hi!</p>
+  </body>
+</html>
