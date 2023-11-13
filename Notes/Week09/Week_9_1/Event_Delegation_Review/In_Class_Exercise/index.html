@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Event Delegation Teaser</title>
+    <style type="text/css">
+      img {
+        display: block;
+        transition: all 2s ease-in-out;
+        opacity: 1;
+      }
+
+      #kitty {
+        border: 5px solid blue;
+      }
+
+      .hidden {
+        /* display: none;  */
+        /* display none will completely remove, while with hidden, the image is still there taking up space */
+        /* since display: none will completely remove, transitions can't be applied */
+        display: hidden;
+        opacity: 0; /* go from 1 to 0 */
+      }
+
+      .active {
+        color: red;
+      }
+    </style>
+    <script type="text/javascript">
+      document.addEventListener("DOMContentLoaded", function () {
+        document.getElementById("hide").addEventListener("click", hideKitten);
+        /* upon click, call hideKitten function */
+
+        document
+          .getElementById("event1")
+          .addEventListener("mouseover", function (event) {
+            console.log(event);
+            console.log(event.target);
+
+            // Store the element the event happened to as a variable
+            var el = event.target;
+            el.classList.toggle("active");
+            // if not active, turn it on; if it is already active, turn it off
+          });
+
+        function hideKitten() {
+          var targetBtn = document.getElementById("hide");
+          var kitty = document.getElementById("kitty");
+          kitty.classList.toggle("hidden");
+
+          if (kitty.classList.contains("hidden")) {
+            targetBtn.innerHTML = "Show";
+          } else {
+            targetBtn.innerHTML = "Hide";
+          }
+        }
+      });
+    </script>
+  </head>
+  <body>
+    <h1 id="event1">
+      This H1 is here to be moused over so we can look at the event object.
+    </h1>
+    <button id="hide">Hide</button>
+    <div>
+      <img
+        src="https://placekitten.com/300/350"
+        alt="adorable kitten"
+        id="kitty"
+      />
+    </div>
+  </body>
+</html>

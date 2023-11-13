@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Geolocation</title>
+    <script type="text/javascript">
+      // Add event listener to make sure html page is fully loaded
+      document.addEventListener("DOMContentLoaded", getLocation);
+
+      function getLocation() {
+        // Conditional to check if the users browser supports geolocation
+        if (navigator.geolocation) {
+          // Geolocation exists
+          //   Then pass it in to a callback function
+          navigator.geolocation.getCurrentPosition(setPosition);
+        } else {
+          alert("Your browser does not support geolocation");
+        }
+      }
+
+      function setPosition(position) {
+        console.log(position.coords.latitude);
+        console.log(position.coords.longitude);
+
+        var lat = position.coords.latitude;
+        var long = position.coords.longitude;
+        var loc = document.getElementById("location");
+
+        loc.innerHTML = "Latitude: " + lat + " Longitude: " + long;
+        console.log(loc);
+      }
+    </script>
+  </head>
+  <body>
+    <div id="location">
+      <p>Currently searching for location...</p>
+    </div>
+  </body>
+</html>

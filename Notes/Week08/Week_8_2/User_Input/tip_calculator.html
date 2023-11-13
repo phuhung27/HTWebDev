@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Tip Calculator</title>
+    <style type="text/css">
+      .container {
+        width: 300px;
+        margin: 0 auto;
+        line-height: 40px;
+        margin-top: 5%;
+        border: 1px solid gray;
+        border-radius: 10px;
+        padding: 20px;
+      }
+
+      .well {
+        border-radius: 10px;
+        background-color: bisque;
+        min-height: 100px;
+        padding: 20px;
+      }
+
+      .container button {
+        width: 100%;
+        padding: 10px 0;
+        border: 2px solid gray;
+        cursor: pointer;
+        margin: 10px 0;
+        color: white;
+        background-color: #333;
+        transition: background-color 1s ease;
+      }
+
+      .container button:hover {
+        background-color: #555;
+      }
+
+      input[type="number"] {
+        width: 100%;
+        padding: 10px 0;
+        border: 1px solid gray;
+        border-radius: 5px;
+        text-align: center;
+        font-size: 24px;
+      }
+    </style>
+
+    <script type="text/javascript">
+      document.addEventListener("DOMContentLoaded", function () {
+        document
+          .getElementById("calcButton")
+          .addEventListener("click", calcTip);
+      });
+
+      function calcTip() {
+        // Grab output div so we can display messages to user
+        var result = document.getElementById("tipResult");
+
+        // Grab value from bill input
+        var b = document.getElementById("bill").value;
+        b = parseFloat(b); //parseFloat as opposed to parseInt since we are dealing with decimals this time
+
+        var percentage; // tip percentage
+        var tip; // percentage * bill
+        var total; // tip + bill
+
+        var arrayTip = document.getElementsByName("tip");
+        console.log(arrayTip);
+
+        // Loop through all inputs in array to find the radio with the checked attribute
+        for (var i = 0; i < arrayTip.length; i++) {
+          if (arrayTip[i].checked) {
+            percentage = parseFloat(arrayTip[i].value);
+            break;
+          }
+        }
+
+        // Calculate tip
+        tip = b * percentage;
+        console.log(tip);
+        tip = moneyRound(tip);
+        console.log(tip);
+
+        total = b + tip;
+
+        var p1 = document.createElement("P");
+        var p2 = document.createElement("P");
+        var p3 = document.createElement("P");
+        var p4 = document.createElement("P");
+
+        var t1 = document.createTextNode("Bill is $" + b);
+        var t2 = document.createTextNode(
+          "Tip percentage is " + percentage + "%"
+        );
+        var t3 = document.createTextNode("Calculated tip: " + tip);
+        var t4 = document.createTextNode("Your total is: $" + total);
+
+        p1.appendChild(t1);
+        p2.appendChild(t2);
+        p3.appendChild(t3);
+        p4.appendChild(t4);
+
+        result.appendChild(p1);
+        result.appendChild(p2);
+        result.appendChild(p3);
+        result.appendChild(p4);
+      }
+
+      function moneyRound(num) {
+        // Rounding number passed in up
+        var rn = Math.ceil(num * 100) / 100;
+        // If want to round to 3 decimal places, do (num * 1000) / 1000
+        return rn;
+      }
+    </script>
+  </head>
+
+  <body>
+    <div class="container">
+      <h1>Tip Calculator</h1>
+      <form>
+        <label for="bill">Enter the value of your bill here: </label>
+        <input
+          type="number"
+          name="bill"
+          id="bill"
+          min="0"
+          step="0.01"
+          required="true"
+        />
+        <br />
+        <!-- Radio Group -->
+        <!-- All of radio buttons have same name but different values -->
+        <label>
+          <input type="radio" name="tip" value="0.05" checked="true" />5%
+        </label>
+
+        <label> <input type="radio" name="tip" value="0.10" />10% </label>
+
+        <label> <input type="radio" name="tip" value="0.15" />15% </label>
+
+        <label> <input type="radio" name="tip" value="0.20" />20% </label>
+        <br />
+        <button type="button" id="calcButton">Calculate Tip Amount</button>
+      </form>
+
+      <div class="well" id="tipResult"></div>
+    </div>
+  </body>
+</html>
