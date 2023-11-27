@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Hung Truong - About</title>
+    <link rel="stylesheet" href="./stylesheet.css" />
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+    />
+  </head>
+
+  <body>
+    <header>
+      <a href="./index.html">
+        <img src="./Img/Signature.png" alt="signature" />
+      </a>
+      <nav>
+        <ul>
+          <li>
+            <a href="#about-section" class="active">About</a>
+            <!-- Dropdown menu for ABOUT -->
+            <ul class="dropdown">
+              <li><a href="#resume-section">Resume</a></li>
+              <li><a href="#connect-section">Connect</a></li>
+            </ul>
+          </li>
+
+          <li>
+            <a href="./interests.html" target="_self">Interests</a>
+          </li>
+        </ul>
+      </nav>
+    </header>
+
+    <div class="container" id="about-section">
+      <article>
+        <img
+          src="./Img/Professional Headshot.jpg"
+          alt="headshot"
+          class="prof_photo"
+        />
+      </article>
+
+      <div class="description">
+        <h3>Hi, my name is Hung Truong!</h3>
+        <p>
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+          eiusmod tempor incididunt ut labore et dolore magna aliqua. Non
+          curabitur gravida arcu ac. Nisi lacus sed viverra tellus in hac
+          habitasse platea dictumst. Nisi lacus sed viverra tellus in hac
+          habitasse. Lorem dolor sed viverra ipsum nunc aliquet. Sollicitudin
+          aliquam ultrices sagittis orci a scelerisque purus semper eget. Elit
+          eget gravida cum sociis natoque. In ante metus dictum at tempor
+          commodo ullamcorper a. Pretium nibh ipsum consequat nisl vel. Non
+          sodales neque sodales ut etiam sit. Semper auctor neque vitae tempus.
+          Bibendum arcu vitae elementum curabitur vitae nunc.
+        </p>
+      </div>
+    </div>
+
+    <div class="container2" id="resume-section">
+      <h3>Hung Truong</h3>
+      <div class="personal_info">
+        <p>Phone: (347) 422-4279</p>
+        <p>Email: hpt3032@nyu.edu</p>
+        <p>
+          LinkedIn:
+          <a
+            href="https://www.linkedin.com/in/hung-truong-155041191/"
+            target="_blank"
+            >https://www.linkedin.com/in/hung-truong-155041191/</a
+          >
+        </p>
+      </div>
+      <!-- Download Resume section -->
+      <article class="view_resume">
+        <a href="./Img/Resume - Hung Truong.pdf" target="_blank">View Resume</a>
+      </article>
+    </div>
+
+    <div class="container2" id="connect-section">
+      <h3>Let's Connect</h3>
+      <form>
+        <label for="first_name">First Name: </label>
+        <input type="text" id="first_name" name="firstname" />
+
+        <label for="last_name">Last Name: </label>
+        <input type="text" id="last_name" name="lastname" />
+
+        <label for="email">Email: </label>
+        <input type="email" id="email" name="email_address" required />
+
+        <input type="submit" value="Submit" />
+      </form>
+    </div>
+
+    <footer>
+      <p>&copy; 2023 Hung Truong. All rights reserved.</p>
+    </footer>
+  </body>
+</html>
