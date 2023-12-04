@@ -1,34 +1,45 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Hung Truong - Interests</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Hung Truong - About</title>
     <link rel="stylesheet" href="./stylesheet.css" />
+    <script
+      src="https://kit.fontawesome.com/21df0de78f.js"
+      crossorigin="anonymous"
+    ></script>
+
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.7.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
   </head>
+
   <body>
     <header>
-      <img src="./Img/Signature.png" alt="signature" />
+      <a href="./index.html">
+        <img src="./Img/Signature.png" alt="signature" />
+      </a>
       <nav>
         <ul>
           <li>
-            <a href="./index.html" target="_self">About</a>
+            <a href="./index.html">About</a>
+            <!-- Dropdown menu for ABOUT -->
+            <ul class="dropdown">
+              <li><a href="./index.html#resume-section">Resume</a></li>
+              <li><a href="./index.html#connect-section">Connect</a></li>
+            </ul>
           </li>
-          <li>
-            <a href="./resume.html" target="_self">Resume</a>
-          </li>
+
           <li>
             <a href="./interests.html" target="_self" class="active"
               >Interests</a
             >
           </li>
-          <li>
-            <a href="./connect.html">Connect</a>
-          </li>
         </ul>
       </nav>
     </header>
-
     <div class="container2">
       <h3>My Interests</h3>
       <p>
@@ -47,6 +58,22 @@
 
     <footer>
       <p>&copy; 2023 Hung Truong. All rights reserved.</p>
+      <div class="social_links">
+        <p>Phone <i class="fa-solid fa-phone"></i> <br />(347) 422-4279</p>
+        <p>
+          Email <i class="fa-solid fa-envelope"></i> <br />
+          hpt3032@nyu.edu
+        </p>
+        <p>
+          LinkedIn <i class="fa-brands fa-linkedin"></i> <br />
+          <a
+            href="https://www.linkedin.com/in/hung-truong-155041191/"
+            target="_blank"
+          >
+            Hung Truong</a
+          >
+        </p>
+      </div>
     </footer>
   </body>
 </html>
