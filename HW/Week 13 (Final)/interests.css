@@ -1,0 +1,241 @@
+@import url('https://fonts.googleapis.com/css2?family=EB+Garamond:wght@400;600&display=swap');
+
+/* NAVBAR */
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 100px;
+  width: 100%;
+  border: solid 2px black;
+  font-family: 'EB Garamond', sans-serif;
+}
+
+header img {
+    max-width: 200px;
+    height: 100%;
+}
+
+nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100px;
+}
+
+nav li {
+    font-size: 1.25rem;
+    width: 150px; 
+    text-align: center; 
+}
+
+nav a {
+    text-decoration: none;
+    color: #333;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: all 1s;
+    height: 100px;
+}
+
+nav .dropdown {
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+  z-index: 1;
+}
+
+nav li:hover .dropdown {
+  display: block; 
+}
+
+nav a:hover {
+  background-color: rgb(105, 150, 105);
+}
+
+nav li a.active {
+  text-decoration: underline;
+}
+
+/* Container */
+.container2 {
+  width: 80%;
+  max-width: 800px;
+  margin: 2% auto;
+  text-align: center;
+}
+
+.container2 h3 {
+  font-family: 'EB Garamond', sans-serif;
+  font-size: 2rem;
+  margin-bottom: 3%;
+}
+
+.container2 p, ul {
+  font-family: 'EB Garamond', sans-serif;
+  font-size: 1.25rem;
+  margin-bottom: 5%;
+}
+
+/* Carousel */
+#interestsCarousel {
+  border: 8px solid rgba(0, 0, 0, 0.8);
+  border-radius: 15px;
+  overflow: hidden;
+}
+
+.carousel-item {
+  height: 700px; /* Set the desired fixed height for your images */
+}
+
+.carousel-item img {
+  object-fit: cover;
+  height: 100%;
+}
+
+.carousel-caption {
+  background-color: rgba(50, 60, 50, 0.8);
+  color: white;
+  border-radius: 15px;
+  padding: 15px;
+}
+
+.carousel-caption h5 {
+  font-size: 1.5rem;
+  margin-bottom: 10px;
+}
+
+.carousel-caption p {
+  font-size: 1.2rem;
+  margin-bottom: 0;
+}
+
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+  background-color: #626262;
+}
+
+.carousel-control-prev:hover,
+.carousel-control-next:hover {
+  background-color: rgba(99, 99, 99, 0.5);
+}
+
+.carousel-caption h5 {
+  padding-bottom: 1%;
+}
+
+.carousel-caption .btn {
+  background-color: whitesmoke;
+  color: black;
+  border: none;
+  padding: 2%;
+  font-size: 1rem;
+  transition: all 0.5s ease;
+  transform-origin: center;
+}
+
+.carousel-caption .btn:hover {
+  background-color: #7BB2D9;
+  font-size: 1.1rem;
+  transform: scale(1.1);
+}
+
+.modal-footer button {
+  background-color: whitesmoke;
+  color: black;
+}
+
+.modal-footer button:hover {
+  background-color: #7BB2D9;
+}
+
+/* ------------------------------------------------------------------------------------------- */
+/* FOOTER */
+footer {
+  background-color: rgb(62, 62, 62);
+  font-family: 'EB Garamond', sans-serif;
+  color: whitesmoke;
+  text-align: center;
+  font-size: 1.1rem;
+  width: 100%;
+  padding: 1%;
+}
+
+.social_links {
+  display: flex;  
+  justify-content: center;
+}
+
+.social_links p {
+  color: whitesmoke;
+  font-size: 1.1rem;
+  padding: 0 2%;
+}
+
+.fa-phone {
+  font-size: 1.5rem;
+  color: #48e963;
+}
+
+.fa-envelope {
+  font-size: 1.5rem;
+  color: #fedd03;
+
+}
+.fa-linkedin {
+  font-size: 2rem;
+  color: #0b65c2; 
+}
+
+footer a {
+  text-decoration: none;
+  color: white;
+}
+
+
+/* ------------------------------------------------------------------------------------------- */
+/* Media Queries */
+
+/* For phone */
+
+@media screen and (max-width: 767px) {
+  .container {
+    margin-top: 80px; /* Add a top margin to push the container down */
+  }
+
+  .container article,
+  .description,
+  .container2 {
+    width: 80%;
+    margin: 0 auto;
+  }
+
+  article img {
+    margin: 20px 0; /* margin top */
+  }
+
+  header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+  }
+
+  nav li {
+    text-align: center;
+    padding: 10px;
+    width: 25%;
+  }
+
+  /* Connect page */
+  form {
+    width: 100%;
+  }
+}
+
+

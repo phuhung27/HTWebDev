@@ -1,0 +1,359 @@
+@import url('https://fonts.googleapis.com/css2?family=EB+Garamond:wght@400;600&display=swap');
+
+html,
+body {
+  margin: 0;
+  font-family: 'EB Garamond', sans-serif;
+}
+
+h1 {
+  font-size: 2.5rem;
+  text-align: center;
+}
+
+h1 span {
+  color:rgb(19, 154, 78);
+}
+
+h3 {
+  font-size: 2rem;
+}
+
+.sliding-heading {
+  font-size: 2.5rem;
+  text-align: center;
+  overflow: hidden; /* Hide overflowing content */
+}
+
+.sliding-heading span {
+  display: inline-block;
+  transform: translateX(100%);
+  transition: transform 1s ease-in-out;
+}
+
+.sliding-heading span.slide-in {
+  transform: translateX(0%);
+}
+
+/* NAVBAR */
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 100px;
+  width: 100%;
+  border: solid 2px black;
+}
+
+header svg {
+  margin-left: 15px;
+  max-width: 180px;
+  height: 100%;
+}
+
+/* Signature animation */
+/* https://www.youtube.com/watch?v=dXMfOFHBqA8 */
+header svg path {
+  stroke-dasharray: 1500; /* dash length */
+  stroke-dashoffset: 1500; /* determine starting point / how much is shifted */
+  animation: drawSignature 5s forwards;
+}
+
+@keyframes drawSignature {
+  to {
+    stroke-dashoffset: 0;
+  }
+} 
+/* End of signature */
+
+nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100px;
+}
+
+nav li {
+    font-size: 1.25rem;
+    width: 150px; 
+    text-align: center; 
+}
+
+nav a {
+  text-decoration: none;
+  color: #333;
+  background-color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: all 1s;
+  height: 100px;
+}
+
+nav a:hover {
+  background-color: rgb(105, 150, 105);
+}
+
+nav .dropdown {
+  display: none;
+  position: absolute;
+}
+
+nav li:hover .dropdown {
+  display: block; 
+}
+
+nav li a.active {
+  text-decoration: underline;
+}
+
+/* Container */
+.container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  margin-top: 2%;
+  margin-bottom: 7%;
+}
+  
+.container2 {
+  width: 80%;
+  max-width: 800px;
+  margin: 2% auto;
+  text-align: center;
+}
+
+/* About Section */
+.description {
+  width: 45%;
+  padding-left: 3%;
+}
+
+.container article {
+  width: 45%;
+}
+
+.description h3 {
+  font-size: 3rem;
+  text-align: center;
+}
+
+article img {
+  border-radius: 20%;
+}
+
+.description p {
+  font-size: 1.5rem;
+  margin-bottom: 20px;
+  width: 70%;
+  margin: 0 auto;
+}
+
+/* Resume & Connect Pages */
+
+.container2 h3 {
+  margin-bottom: 20px;
+}
+
+.personal_info,
+form {
+  text-align: center;
+}
+
+.personal_info p {
+  font-size: 1.25rem;
+  margin-bottom: 10px;
+}
+
+/* View Resume Button */
+.view_resume {
+  background-color: rgb(19, 154, 78);
+  width: 30%;
+  text-align: center;
+  padding: 10px;
+  margin: 4% auto;
+  margin-bottom: 10%;
+}
+
+.view_resume a {
+  text-decoration: none;
+  color: white;
+  font-weight: bold;
+  font-size: 1.25rem;
+  display: inline-block;
+  width: 100%;
+}
+
+
+/* Experience Section */
+.timeline {
+  position: relative;
+  margin: 0 auto;
+}
+
+.textbox {
+  padding: 1% 2%;
+  background-color: wheat;
+  position: relative;
+  border-radius: 30px; 
+  font-size: 15px;
+  width: 30%;
+  font-size: 1rem;
+}
+
+.left-container {
+  left: 5%;
+}
+
+.right-container {
+  right: -60%;
+}
+
+.timeline::after {
+  content: "";
+  position: absolute;
+  width: 6px;
+  height: 100%;
+  background-color: black;
+  top: 0;
+  left: 50%;
+  margin-left: -3px;
+  z-index: -1;
+}
+
+/* Connect form */
+form {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  max-width: 300px;
+  margin: 0 auto;
+  margin-top: 20px;
+  background-color: #839D9A;
+  padding: 20px;
+  border-radius: 20px;
+  box-shadow: 10px 0 10px grey
+}
+
+label {
+  display: block;
+  font-size: 1.2rem;
+  margin-top: 10px;
+  color: black;
+}
+
+input {
+  font-size: 1rem;
+  margin: 5px 0;
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+input[type="submit"] {
+  display: block;
+  background-color: #f8f7f3; /* Button background color */
+  color: black;
+  padding: 10px 20px;
+  margin: 0 auto;
+  margin-top: 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: 0.5s ease;
+}
+
+input[type="submit"]:hover {
+  background-color: #7BB2D9;
+}
+
+/* ------------------------------------------------------------------------------------------- */
+/* FOOTER */
+footer {
+  background-color: rgb(62, 62, 62);
+  color: whitesmoke;
+  text-align: center;
+  font-size: 1.1rem;
+  width: 100%;
+  padding: 1%;
+}
+
+.social_links {
+  display: flex;  
+  justify-content: center;
+}
+
+.social_links p {
+  color: whitesmoke;
+  font-size: 1.1rem;
+  padding: 0 2%;
+}
+
+.fa-phone {
+  font-size: 1.5rem;
+  color: #48e963;
+}
+
+.fa-envelope {
+  font-size: 1.5rem;
+  color: #fedd03;
+
+}
+
+.fa-linkedin {
+  font-size: 2rem;
+  color: #0b65c2; 
+}
+
+footer a {
+  text-decoration: none;
+  color: white;
+}
+
+
+/* ------------------------------------------------------------------------------------------- */
+/* Media Queries */
+
+/* For phone */
+
+@media screen and (max-width: 767px) {
+  .container {
+    margin-top: 80px; /* Add a top margin to push the container down */
+  }
+
+  .container article,
+  .description,
+  .container2 {
+    width: 80%;
+    margin: 0 auto;
+  }
+
+  article img {
+    margin: 20px 0; /* margin top */
+  }
+
+  header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+  }
+
+  nav li {
+    text-align: center;
+    padding: 10px;
+    width: 25%;
+  }
+
+  /* Connect page */
+  form {
+    width: 100%;
+  }
+}
+
+
