@@ -11,9 +11,10 @@ header {
   font-family: 'EB Garamond', sans-serif;
 }
 
-header img {
-    max-width: 200px;
-    height: 100%;
+header svg {
+  margin-left: 15px;
+  max-width: 180px;
+  height: 100%;
 }
 
 nav ul {
@@ -155,6 +156,50 @@ nav li a.active {
 }
 
 /* ------------------------------------------------------------------------------------------- */
+/* Gallery */
+.gallery-section {
+  width: 80%;
+  max-width: 1200px; /* Adjust max width as needed */
+  margin: 2% auto;
+  text-align: center;
+}
+
+.gallery-section h3 {
+  font-family: 'EB Garamond', sans-serif;
+  font-size: 2rem;
+  margin-bottom: 3%;
+}
+
+/* HORIZONTAL SCROLL CONTAINER */
+.horizontal-scroll {
+  display: flex;
+  flex-direction: column;
+  overflow-x: auto; /* horizontal scrolling */
+  gap: 10px; /* Spacing between rows */
+}
+
+/* STYLE FOR EACH ROW */
+.image-row {
+  display: flex;
+  gap: 10px;
+}
+
+.image-row img {
+  max-height: 320px;
+  width: auto;
+}
+
+/* Scrollbar */
+.horizontal-scroll::-webkit-scrollbar {
+  height: 8px;
+}
+
+.horizontal-scroll::-webkit-scrollbar-thumb {
+  background: rgb(19, 154, 78);
+  border-radius: 4px;
+}
+
+/* ------------------------------------------------------------------------------------------- */
 /* FOOTER */
 footer {
   background-color: rgb(62, 62, 62);
@@ -187,6 +232,7 @@ footer {
   color: #fedd03;
 
 }
+
 .fa-linkedin {
   font-size: 2rem;
   color: #0b65c2; 
