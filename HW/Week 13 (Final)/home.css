@@ -22,7 +22,7 @@ h3 {
 .sliding-heading {
   font-size: 2.5rem;
   text-align: center;
-  overflow: hidden; /* Hide overflowing content */
+  overflow: hidden;
 }
 
 .sliding-heading span {
@@ -68,19 +68,19 @@ header svg path {
 /* End of signature */
 
 nav ul {
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    height: 100px;
+  display: flex;
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  align-items: center;
+  justify-content: center;
+  height: 100px;
 }
 
 nav li {
-    font-size: 1.25rem;
-    width: 150px; 
-    text-align: center; 
+  font-size: 1.25rem;
+  width: 150px; 
+  text-align: center; 
 }
 
 nav a {
@@ -111,11 +111,12 @@ nav li a.active {
   text-decoration: underline;
 }
 
-/* Hamburger */
 .hamburger-menu {
-  display: none; /* Hidden by default */
-  font-size: 2rem; /* Adjust size as needed */
-  cursor: pointer;
+  display: none;
+}
+
+.hamburger-menu-content {
+  display: none;
 }
 
 /*-----------------------------------------------------------------------------------*/
@@ -243,7 +244,6 @@ article img {
   flex-direction: row;
 }
 
-/* Individual section containers */
 .additional-info-section {
   width: 30%;
   background-color: #f0f0f0;
@@ -253,14 +253,12 @@ article img {
   margin-bottom: 20px;
 }
 
-/* Style section headings */
 .additional-info-section h3 {
   font-size: 1.8rem;
   margin-bottom: 10px;
   color: rgb(19, 154, 78);
 }
 
-/* Style list items */
 .additional-info-section ul {
   list-style-type: none;
   padding: 0;
@@ -361,143 +359,174 @@ footer a {
 /* Media Queries */
 /* For phone */
 @media screen and (max-width: 767px) {
-  /* Header adjustments */
+  nav ul {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    background-color: #fff;
+    z-index: 99;
+    padding: 10px 0;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+  }
+
+  nav ul.active {
+    display: block;
+  }
+
+  nav ul li {
+    display: block;
+    text-align: center;
+    border-top: 1px solid #ddd;
+  }
+
+  nav ul li a {
+    display: block;
+    padding: 10px;
+    color: #333;
+    text-decoration: none;
+  }
+
   header {
     display: flex;
-    justify-content: space-between;
+    justify-content: space-between; /* signature & menu on opposite ends */
     align-items: center;
-    padding: 10px;
+    padding: 0 15px;
+}
+
+  header a {
+    flex-grow: 0;
+    flex-shrink: 0;
+    max-width: 180px;
+    order: -1; /* signature stays on left */
   }
-  
-  header svg {
-  width: 100%;
-  height: auto;
-  order: 1; /* signature stays on left */
-}
 
-.hamburger-menu {
-  display: flex;
-  align-items: center;
-  font-size: 1.5rem;
-  cursor: pointer;
-  order: 2; /* menu stays on right */
-}
+  .hamburger-menu {
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end; /* menu stays on right */
+    flex-grow: 1;
+    margin-right: 50px;
+  } 
 
-nav {
-  width: 100%;
-  text-align: center;
-}
+  .hamburger-menu .fa-bars {
+    font-size: 25px;
+    color: black;
+  }
 
-nav ul {
-  display: none;
-  flex-direction: column; /* Stack nav items vertically */
-  align-items: center;
-}
-
-nav ul li {
-  margin: 5px 0;
-  list-style-type: none;
-}
-
-nav ul li a {
-  display: block;
-  padding: 10px;
-  color: #333;
-  text-decoration: none;
-}
-
-
-/* Dropdown */
-nav .dropdown {
-    display: none;
-    position: static; /* Let it flow within the document */
-    width: 100%;
-}
-  
-nav li:hover .dropdown {
+  /* Textbox area for menu content */
+  .hamburger-menu-content {
     display: block;
-}
-
-nav .dropdown li {
-  text-align: center;
-  padding: 5px 10px;
-}
-
-.container {
-  flex-direction: column;
-  align-items: center;
-  margin-top: 20px;
+    position: fixed;
+    top: 0;
+    right: -100%; /* start off-screen */
+    width: 50%; 
+    height: 100%;
+    background:rgba(50, 60, 50, 0.95);
+    color: whitesmoke;
+    transition: right 0.5s;
+    padding: 2rem;
+    z-index: 100;
   }
 
-  .description {
-    width: 90%;
-    text-align: center;
-    margin-bottom: 20px;
+  .hamburger-menu-content .menu-close {
+    text-align: right;
+    cursor: pointer;
+  }
+
+  /* Actual text in hamburger menu content */
+  .hamburger-menu-content .menu-link,
+  .hamburger-menu-content .contact-info-text {
+    display: block;
+    font-size: 1.2rem;
+    padding: 5px;
+    margin: 1rem;
+    color: white;
+    text-decoration: none;
+  }
+
+  .hamburger-menu-content ul {
+    list-style-type: none;
+  }
+
+  .hamburger-menu-content.active {
+    right: 0; /* show menu on right side */
+  }
+
+  /* Add border to text */
+  .hamburger-menu-content .menu-links-wrapper a:last-child {
+    border-bottom: 1px solid white;
+    margin-bottom: 10px;
+  }
+
+/* ----------------------------------------- */
+
+  .container, .container2, .description {
+    width: 100%;
   }
 
   .container article {
     width: 100%;
-    display: flex;
-    justify-content: center; /* Center the image container */
+    display: flex; 
+    justify-content: center;
+    align-items: center;
   }
 
-  article img {
-    max-width: 80%;
+  .container article img {
+    max-width: 70%;
     height: auto;
   }
 
-  /* Experience Section */
+  .description p {
+    margin-bottom: 30px;
+  }
+
+  .description article img {
+    max-height: 100px;
+    width: auto;
+    margin: 0 auto;
+  }
+
+  /* Experience Table */
   .portfolio-table {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      padding: 20px;
-      max-width: 800px;
-      margin: 0 auto;
+    width: 90%;
+    align-items: center;
   }
 
   .table-row {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      padding: 10px;
+    flex-direction: column;
   }
 
   .table-cell {
-      padding: 5px;
-      font-size: 1.5rem;
-  }
-
-  /* Additional Info */
-  .additional-info {
-    display: block; /* take up whole width */
-    margin: 20px;
-  }
-  
-  .additional-info-section {
-    width: auto;
-    }
-    
-  .additional-info-section h3 {
-    font-size: 1.5rem; /* smaller heading size for mobile */
-  }
-  
-  .additional-info-section ul li {
-    font-size: 1.2rem; /* text sizing */
-  }
-
-  /* Footer Adjustments */
-  footer {
-    font-size: 1.2rem;
     padding: 10px;
+    font-size: 1.2rem;
+  }
+
+  /* Additional Info  */
+  .additional-info {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .additional-info-section {
+    width: 70%; /* Adjust width as needed */
+    margin: 10px auto;
+  }
+
+  /* Footer adjustments */
+  footer {
+    font-size: 1rem;
+    padding: 20px;
   }
 
   .social-links {
-      flex-direction: column;
-      align-items: center;
+    flex-direction: column;
+    align-items: center;
   }
 
   .social-links p {
-      padding: 0.5rem 0;
+    padding: 0.5rem 0;
   }
 }

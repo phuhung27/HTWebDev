@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Hung Truong</title>
+    <link rel="stylesheet" href="./home.css" />
+    <script
+      src="https://kit.fontawesome.com/21df0de78f.js"
+      crossorigin="anonymous"
+    ></script>
+
+    <!-- GSAP & Scroll Trigger -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/ScrollTrigger.min.js"></script>
+
+    <!-- Sliding name effect -->
+    <script src="index-page.js"></script>
+  </head>
+
+  <body>
+    <header>
+      <!-- Hamburger Menu -->
+      <div class="hamburger-menu">
+        <i class="fa fa-bars"></i>
+      </div>
+
+      <a href="./index.html">
+        <!-- Signature -->
+        <svg
+          width="370"
+          height="191"
+          viewBox="0 0 370 191"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <rect width="370" height="191" fill="white" />
+          <path
+            d="M29 81C25.9829 74.9657 26.4797 79.2006 27 84.1111C28.8269 101.352 30.2174 119.174 27 136.333C26.7085 137.888 20.4178 160.312 17 155.889C11.0633 148.206 17.4205 133.646 21.6667 127C31.3259 111.881 45.8312 100.215 52.5555 83.2222C54.7222 77.7471 56.1083 71.9539 56.7778 66.1111C57.025 63.9531 57.1351 61.5854 56.7778 65.5556C55.2073 83.0056 52.0612 101.145 53.4444 118.667C53.795 123.107 54.3812 131.03 59.4444 133.111C64.2697 135.095 69.0137 130.812 73 129"
+            stroke="black"
+            stroke-width="5"
+            stroke-linecap="round"
+          />
+          <path
+            d="M96 64C95.8959 59.2113 95.2284 58.6096 95.0556 64.0556C94.5903 78.7129 95.8877 93.4199 96.4445 108.056C97.086 124.92 97.1866 141.803 94 158.444C93.4592 161.269 91.3272 174.666 85.9445 168.333C79.2977 160.514 77.68 146.294 76.4445 136.667C73.0544 110.253 77.9772 84.6172 88.8889 60.4444C97.468 41.4391 109.31 24.6667 120.667 7.33333C120.704 7.27683 123.296 1.40733 122 4"
+            stroke="black"
+            stroke-width="5"
+            stroke-linecap="round"
+          />
+          <path
+            d="M110 76C111.7 86.2007 107.12 98.7784 111.167 108.389C114.373 116.003 121.653 94.5761 122 93.5556C123.849 88.1136 125.394 82.5589 127.389 77.1667C127.743 76.2097 128.745 73.2421 129.833 72.2222C130.835 71.2828 130.871 73.3519 130.889 73.5C131.485 78.57 128.509 90.1754 132.444 94.1111C138.941 100.608 153.391 66.9118 162.778 84.7778C166.061 91.0271 168.959 85.9035 173 82.1111C181.587 74.0529 196.476 59.5786 209.667 62.1111C218.657 63.8373 212.433 75.3484 214.944 80.6667C219.018 89.2929 251.038 77.3744 256.778 76C265.308 73.9576 273.838 71.7637 282.5 70.3333C286.88 69.61 293.762 68.8769 285.111 72.4444C232.274 94.2329 177.716 112.045 124.444 132.778C101.26 141.801 78.0722 150.875 55.2222 160.722C39.1401 167.653 18.6944 174.432 4.77778 185.611C4.22068 186.059 3.00247 187.181 3.66667 187.444C8.02827 189.175 12.9704 185.971 17.4445 184.556C46.4928 175.368 74.5569 162.897 103.111 152.333C172.643 126.61 243.926 103.909 317.389 92.6667C331.275 90.5417 345.371 88.71 359.444 88.4444C363.408 88.3697 366.012 88.5176 367 90"
+            stroke="black"
+            stroke-width="5"
+            stroke-linecap="round"
+          />
+        </svg>
+      </a>
+
+      <!-- Navbar -->
+      <nav>
+        <ul>
+          <li>
+            <a href="#about-section" class="active">About</a>
+            <!-- Dropdown menu for ABOUT -->
+            <ul class="dropdown">
+              <li><a href="#resume-section">Resume</a></li>
+              <li><a href="#connect-section">Connect</a></li>
+            </ul>
+          </li>
+          <li>
+            <a href="./interests.html" target="_self">Interests</a>
+          </li>
+        </ul>
+      </nav>
+    </header>
+
+    <!-- Hamburger Menu Overlay -->
+    <div id="hamburger-menu-content" class="hamburger-menu-content">
+      <!-- Close Button -->
+      <div class="menu-close">
+        <i class="fa fa-times"></i>
+      </div>
+
+      <!-- Menu Links -->
+      <div class="menu-links-wrapper">
+        <a href="#about-section" class="menu-link">About</a>
+        <ul>
+          <li><a href="#resume-section" class="menu-link">Resume</a></li>
+          <li><a href="#connect-section" class="menu-link">Connect</a></li>
+        </ul>
+
+        <a href="./interests.html" class="menu-link">Interests</a>
+      </div>
+
+      <!-- Contact Information -->
+      <div class="contact-info-wrapper">
+        <div class="contact-info-text">(347) 422-4279</div>
+        <div class="contact-info-text">hpt3032@nyu.edu</div>
+        <div class="contact-info-text">Happy to connect! 😊</div>
+      </div>
+    </div>
+
+    <!-- Description -->
+    <div class="container" id="about-section">
+      <div class="description">
+        <h1 class="sliding-heading">Hi, I'm <span>Hung Truong!</span></h1>
+        <p>
+          I am a senior at New York University in pursuit of a
+          <strong>B.S. in Business & Technology Management</strong> and a minor
+          in <strong>Integrated Design Media</strong>. Through my academic
+          background, I am able to problem-solve effectively, utilizing both my
+          creativity and analytical skills. My interests lie especially in
+          <strong>corporate finance</strong>, in which I hope to contribute with
+          my finance and accounting acumen, and equity research.
+        </p>
+      </div>
+
+      <article>
+        <img src="./Img/Professional Headshot.jpg" alt="headshot" />
+      </article>
+    </div>
+
+    <!-- Resume Section -->
+    <div class="container2" id="resume-section">
+      <h3>My Experience</h3>
+      <!-- Download Resume section -->
+      <article class="view-resume">
+        <a href="./Img/Resume - Hung Truong.pdf" target="_blank">View Resume</a>
+      </article>
+
+      <!-- Experience Section -->
+      <!-- Column Headers -->
+      <div class="portfolio-table">
+        <div class="table-header">
+          <div class="table-cell">Company</div>
+          <div class="table-cell">Position</div>
+          <div class="table-cell">Date</div>
+          <div class="table-cell">Description</div>
+        </div>
+
+        <!-- Experience Items -->
+        <div class="table-row">
+          <div class="table-cell">
+            <div class="table-cell cell-text">Viet Dragon Securities</div>
+            <img
+              src="./Img/VDSC Logo.webp"
+              alt="Company Logo"
+              class="VDSC-logo"
+            />
+          </div>
+          <div class="table-cell cell-text">Investment Banking Intern</div>
+          <div class="table-cell cell-text">06/2023 - 08/2023</div>
+          <div class="table-cell cell-text">
+            Supported senior bankers complete a multi-million dollar deal by
+            preparing teaser & information memorandum.
+          </div>
+        </div>
+
+        <div class="table-row">
+          <div class="table-cell">
+            <div class="table-cell cell-text">AIA Group Ltd.</div>
+            <img src="./Img/AIA Logo.svg" alt="Company Logo" class="AIA-logo" />
+          </div>
+          <div class="table-cell cell-text">Agency Marketing Intern</div>
+          <div class="table-cell cell-text">06/2022 - 08/2022</div>
+          <div class="table-cell cell-text">
+            Developed communications plan for the first launch of AIA One
+            Billion campaign in Vietnam.
+          </div>
+        </div>
+
+        <div class="table-row">
+          <div class="table-cell">
+            <div class="table-cell cell-text">
+              NYU - Vietnamese Student Association
+            </div>
+            <img src="./Img/VSA Logo.png" alt="Company Logo" class="VSA-logo" />
+          </div>
+          <div class="table-cell cell-text">Director of Logistics</div>
+          <div class="table-cell cell-text">10/2022 - Present</div>
+          <div class="table-cell cell-text">
+            Oversees all inventory management and logistical operations and
+            maintain partnerships with key vendors. Collaborate with team to
+            ensure seamless execution of events.
+          </div>
+        </div>
+
+        <div class="table-row">
+          <div class="table-cell">
+            <div class="table-cell cell-text">SOS Children's Villages</div>
+            <img
+              src="./Img/SOS Logo.webp"
+              alt="Company Logo"
+              class="VDSC-logo"
+            />
+          </div>
+          <div class="table-cell cell-text">Volunteer Tutor</div>
+          <div class="table-cell cell-text">06/2020 - 08/2021</div>
+          <div class="table-cell cell-text">
+            Designed and taught an English class to a group of orphans.
+            Supported the village's financing activities through successfully
+            reaching out for sponsorship opportunities.
+          </div>
+        </div>
+        <!-- End of Experience Items -->
+      </div>
+
+      <!-- Additional Info Section -->
+      <div class="additional-info" id="additional-info-section">
+        <!-- Skills -->
+        <div class="additional-info-section">
+          <h3>Skills</h3>
+          <ul>
+            <li>Proficient in Microsoft Excel, Word, Powerpoint</li>
+            <li>R, Quickbooks, Salesforce</li>
+            <li>Web Development: HTML, CSS, JavaScript</li>
+          </ul>
+        </div>
+
+        <!-- Certifications Section -->
+        <div class="additional-info-section">
+          <h3>Certifications</h3>
+          <ul>
+            <li>Bloomberg Market Concepts</li>
+            <li>Excel Essential Training</li>
+            <li>Quickbooks (LinkedIn)</li>
+            <li>TOEFL iBT (110/120)</li>
+          </ul>
+        </div>
+
+        <!-- Languages Section -->
+        <div class="additional-info-section">
+          <h3>Languages</h3>
+          <ul>
+            <li>Vietnamese (native)</li>
+            <li>English (professional proficiency)</li>
+            <li>French (novice)</li>
+          </ul>
+        </div>
+      </div>
+
+      <!------------------------------------------------------------------------------------->
+      <!-- Connect Section -->
+      <div class="container2" id="connect-section">
+        <h3>Let's Connect</h3>
+        <form>
+          <div class="form-content">
+            <label for="name">Your Name</label>
+            <input type="text" id="name" name="name" required />
+          </div>
+          <div class="form-content">
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email-address" required />
+          </div>
+          <div class="form-content">
+            <label for="message">Message</label>
+            <input type="text" id="message" name="message" required />
+          </div>
+          <button type="submit">Send Message</button>
+        </form>
+      </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+      <p>&copy; 2023 Hung Truong. All rights reserved.</p>
+      <div class="social-links">
+        <p>
+          Email <i class="fa-solid fa-envelope"></i> <br />
+          hpt3032@nyu.edu
+        </p>
+
+        <p>
+          LinkedIn <i class="fa-brands fa-linkedin"></i> <br />
+          <a
+            href="https://www.linkedin.com/in/hung-truong-155041191/"
+            target="_blank"
+          >
+            Hung Truong</a
+          >
+        </p>
+
+        <p>Phone <i class="fa-solid fa-phone"></i> <br />(347) 422-4279</p>
+      </div>
+    </footer>
+  </body>
+</html>

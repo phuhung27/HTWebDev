@@ -1,0 +1,738 @@
+@import url('https://fonts.googleapis.com/css2?family=EB+Garamond:wght@400;600&display=swap');
+
+/* NAVBAR */
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 100px;
+  width: 100%;
+  border: solid 2px black;
+  font-family: 'EB Garamond', sans-serif;
+}
+
+header svg {
+  margin-left: 15px;
+  max-width: 180px;
+  height: 100%;
+}
+
+nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100px;
+}
+
+nav li {
+    font-size: 1.25rem;
+    width: 150px; 
+    text-align: center; 
+}
+
+nav a {
+    text-decoration: none;
+    color: #333;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: all 1s;
+    height: 100px;
+}
+
+nav .dropdown {
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+  z-index: 1;
+}
+
+nav li:hover .dropdown {
+  display: block; 
+}
+
+nav a:hover {
+  background-color: rgb(105, 150, 105);
+}
+
+nav li a.active {
+  text-decoration: underline;
+}
+
+.hamburger-menu {
+  display: none;
+}
+
+.hamburger-menu-content {
+  display: none;
+}
+/* ------------------------------------------------------------------------------------------- */
+/* Container */
+.container2 {
+  width: 80%;
+  max-width: 800px;
+  margin: 2% auto;
+  text-align: center;
+}
+
+.container2 h3 {
+  font-family: 'EB Garamond', sans-serif;
+  font-size: 2rem;
+  margin-bottom: 3%;
+}
+
+.container2 p, ul {
+  font-family: 'EB Garamond', sans-serif;
+  font-size: 1.25rem;
+  margin-bottom: 5%;
+}
+
+/* ------------------------------------------------------------------------------------------- */
+/* Carousel */
+#interestsCarousel {
+  border: 8px solid rgba(0, 0, 0, 0.8);
+  border-radius: 15px;
+  overflow: hidden;
+}
+
+.carousel-item {
+  height: 700px; /* fixed height for images */
+}
+
+.carousel-item img {
+  object-fit: cover;
+  height: 100%;
+}
+
+.carousel-caption {
+  background-color: rgba(50, 60, 50, 0.8); 
+  color: white;
+  padding: 10px;
+  border-radius: 10px;
+  font-size: 1rem;
+}
+
+.carousel-caption h5 {
+  font-size: 1.5rem;
+  margin-bottom: 10px;
+}
+
+.carousel-caption p {
+  font-size: 1.2rem;
+  margin-bottom: 0;
+}
+
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+  background-color: #626262;
+}
+
+.carousel-control-prev:hover,
+.carousel-control-next:hover {
+  background-color: rgba(99, 99, 99, 0.5);
+}
+
+.carousel-caption h5 {
+  padding-bottom: 1%;
+}
+
+.carousel-caption .btn {
+  background-color: whitesmoke;
+  color: black;
+  border: none;
+  padding: 2%;
+  font-size: 1rem;
+  transition: all 0.5s ease;
+  transform-origin: center;
+}
+
+.carousel-caption .btn:hover {
+  background-color: #7BB2D9;
+  font-size: 1.1rem;
+  transform: scale(1.1);
+}
+
+.modal-footer button {
+  background-color: whitesmoke;
+  color: black;
+}
+
+.modal-footer button:hover {
+  background-color: #7BB2D9;
+}
+
+/* ------------------------------------------------------------------------------------------- */
+/* Gallery */
+.gallery-section {
+  width: 80%;
+  max-width: 1200px; /* Adjust max width as needed */
+  margin: 2% auto;
+  text-align: center;
+}
+
+.gallery-section h3 {
+  font-family: 'EB Garamond', sans-serif;
+  font-size: 2rem;
+  margin-bottom: 3%;
+}
+
+.horizontal-scroll {
+  display: flex;
+  flex-direction: column;
+  overflow-x: auto; /* horizontal scrolling */
+  gap: 10px; /* space between 2 rows */
+}
+
+.image-row {
+  display: flex;
+  gap: 10px;
+}
+
+.image-row img {
+  max-height: 320px;
+  width: auto;
+}
+
+/* Scrollbar */
+.horizontal-scroll::-webkit-scrollbar {
+  height: 8px;
+}
+
+.horizontal-scroll::-webkit-scrollbar-thumb {
+  background: rgb(19, 154, 78);
+  border-radius: 4px;
+}
+
+/* ------------------------------------------------------------------------------------------- */
+/* FOOTER */
+footer {
+  background-color: rgb(62, 62, 62);
+  font-family: 'EB Garamond', sans-serif;
+  color: whitesmoke;
+  text-align: center;
+  font-size: 1.1rem;
+  width: 100%;
+  padding: 1%;
+}
+
+.social_links {
+  display: flex;  
+  justify-content: center;
+}
+
+.social_links p {
+  color: whitesmoke;
+  font-size: 1.1rem;
+  padding: 0 2%;
+}
+
+.fa-phone {
+  font-size: 1.5rem;
+  color: #48e963;
+}
+
+.fa-envelope {
+  font-size: 1.5rem;
+  color: #fedd03;
+
+}
+
+.fa-linkedin {
+  font-size: 2rem;
+  color: #0b65c2; 
+}
+
+footer a {
+  text-decoration: none;
+  color: white;
+}
+
+/* ------------------------------------------------------------------------------------------- */
+/* Media Queries */
+/* For phone */
+@media screen and (max-width: 767px) {
+  nav ul {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    background-color: #fff;
+    z-index: 99;
+    padding: 10px 0;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+  }
+
+  nav ul.active {
+    display: block;
+  }
+
+  nav ul li {
+    display: block;
+    text-align: center;
+    border-top: 1px solid #ddd;
+  }
+
+  nav ul li a {
+    display: block;
+    padding: 10px;
+    color: #333;
+    text-decoration: none;
+  }
+
+  /* Will be same from home.css */
+  header {
+    display: flex;
+    justify-content: space-between; /* signature & menu on opposite ends */
+    align-items: center;
+    padding: 0 15px;
+  }
+
+  header a {
+    flex-grow: 0;
+    flex-shrink: 0;
+    max-width: 180px;
+    order: -1; /* signature stays on left */
+  }
+
+  .hamburger-menu {
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end; /* menu stays on right */
+    flex-grow: 1;
+    margin-right: 50px;
+  } 
+
+  .hamburger-menu .fa-bars {
+    font-size: 25px;
+    color: black;
+  }
+
+  /* Textbox area for menu content */
+  .hamburger-menu-content {
+    display: block;
+    position: fixed;
+    top: 0;
+    right: -100%; /* start off-screen */
+    width: 50%; 
+    height: 100vh;
+    background:rgba(50, 60, 50, 0.95);
+    color: whitesmoke;
+    transition: right 0.5s;
+    padding: 2rem;
+    z-index: 100; /* ensure above all elements */
+  }
+
+  .hamburger-menu-content .menu-close {
+    text-align: right;
+    cursor: pointer;
+  }
+
+  .hamburger-menu-content .menu-link,
+  .hamburger-menu-content .contact-info-text {
+    display: block;
+    font-size: 1.2rem;
+    padding: 5px;
+    margin: 1rem;
+    color: white;
+    text-decoration: none;
+  }
+
+  .hamburger-menu-content ul {
+    list-style-type: none;
+  }
+
+  .hamburger-menu-content.active {
+    right: 0; /* show menu on right side*/
+  }
+
+  .hamburger-menu-content .menu-links-wrapper a:last-child {
+    border-bottom: 1px solid white;
+    margin-bottom: 10px;
+  }
+  /* --------------------------------------------------------------- */
+  /* Main content container */
+  .container2 {
+    width: 90%;
+    margin: 0 auto;
+  }
+
+  /* Carousel adjustments */
+  .carousel-item {
+    height: auto; /* Adjust height as needed */
+  }
+
+  .carousel-item img {
+    width: 100%;
+    height: auto;
+  }
+
+  .carousel-caption {
+    padding: 5px; /* Reduce padding */
+    font-size: 0.8rem; /* Smaller font size */
+  }
+  
+  .carousel-caption .btn {
+    font-size: 0.3rem;
+    padding: 5px;
+    display: block; /* Ensure it's always visible */
+  }
+
+  .carousel-item {
+    min-height: 200px; /* Or any other suitable value */
+  }
+
+  .carousel-item img {
+    width: 100%;
+    height: auto; /* Maintain aspect ratio */
+  }
+
+
+/*-----------------------------------------------------------------------------------*/
+/* Container */
+.container2 {
+  width: 80%;
+  max-width: 800px;
+  margin: 2% auto;
+  text-align: center;
+}
+
+.container2 h3 {
+  font-family: 'EB Garamond', sans-serif;
+  font-size: 2rem;
+  margin-bottom: 3%;
+}
+
+.container2 p, ul {
+  font-family: 'EB Garamond', sans-serif;
+  font-size: 1.25rem;
+  margin-bottom: 5%;
+}
+
+/* Carousel */
+#interestsCarousel {
+  border: 8px solid rgba(0, 0, 0, 0.8);
+  border-radius: 15px;
+  overflow: hidden;
+}
+
+.carousel-item {
+  height: 700px; /* Set the desired fixed height for your images */
+}
+
+.carousel-item img {
+  object-fit: cover;
+  height: 100%;
+}
+
+.carousel-caption {
+  background-color: rgba(50, 60, 50, 0.8);
+  color: white;
+  border-radius: 15px;
+  padding: 15px;
+}
+
+.carousel-caption h5 {
+  font-size: 1.5rem;
+  margin-bottom: 10px;
+}
+
+.carousel-caption p {
+  font-size: 1.2rem;
+  margin-bottom: 0;
+}
+
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+  background-color: #626262;
+}
+
+.carousel-control-prev:hover,
+.carousel-control-next:hover {
+  background-color: rgba(99, 99, 99, 0.5);
+}
+
+.carousel-caption h5 {
+  padding-bottom: 1%;
+}
+
+.btn-primary {
+  display: inline-block;
+  font-size: 1rem;
+  padding: 10px;
+  background-color: #007bff;
+  color: whitesmoke;
+}
+
+.btn-primary:hover {
+  background-color: #7BB2D9;
+  font-size: 1.1rem;
+  transform: scale(1.1);
+}
+
+.modal-footer button {
+  background-color: whitesmoke;
+  color: black;
+}
+
+.modal-footer button:hover {
+  background-color: #7BB2D9;
+}
+
+/* ------------------------------------------------------------------------------------------- */
+/* Gallery */
+.gallery-section {
+  width: 80%;
+  max-width: 1200px; /* Adjust max width as needed */
+  margin: 2% auto;
+  text-align: center;
+}
+
+.gallery-section h3 {
+  font-family: 'EB Garamond', sans-serif;
+  font-size: 2rem;
+  margin-bottom: 3%;
+}
+
+.horizontal-scroll {
+  display: flex;
+  flex-direction: column;
+  overflow-x: auto; /* horizontal scrolling */
+  gap: 10px; /* space between 2 rows */
+}
+
+.image-row {
+  display: flex;
+  gap: 10px;
+}
+
+.image-row img {
+  max-height: 320px;
+  width: auto;
+}
+
+/* Scrollbar */
+.horizontal-scroll::-webkit-scrollbar {
+  height: 8px;
+}
+
+.horizontal-scroll::-webkit-scrollbar-thumb {
+  background: rgb(19, 154, 78);
+  border-radius: 4px;
+}
+
+/* ------------------------------------------------------------------------------------------- */
+/* FOOTER */
+footer {
+  background-color: rgb(62, 62, 62);
+  font-family: 'EB Garamond', sans-serif;
+  color: whitesmoke;
+  text-align: center;
+  font-size: 1.1rem;
+  width: 100%;
+  padding: 1%;
+}
+
+.social_links {
+  display: flex;  
+  justify-content: center;
+}
+
+.social_links p {
+  color: whitesmoke;
+  font-size: 1.1rem;
+  padding: 0 2%;
+}
+
+.fa-phone {
+  font-size: 1.5rem;
+  color: #48e963;
+}
+
+.fa-envelope {
+  font-size: 1.5rem;
+  color: #fedd03;
+
+}
+
+.fa-linkedin {
+  font-size: 2rem;
+  color: #0b65c2; 
+}
+
+footer a {
+  text-decoration: none;
+  color: white;
+}
+
+.hamburger-menu {
+  display: none;
+}
+
+.hamburger-menu-content {
+  display: none;
+}
+
+/* ------------------------------------------------------------------------------------------- */
+/* Media Queries */
+/* For phone */
+@media screen and (max-width: 767px) {
+  nav ul {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    background-color: #fff;
+    z-index: 99;
+    padding: 10px 0;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+  }
+
+  nav ul.active {
+    display: block;
+  }
+
+  nav ul li {
+    display: block;
+    text-align: center;
+    border-top: 1px solid #ddd;
+  }
+
+  nav ul li a {
+    display: block;
+    padding: 10px;
+    color: #333;
+    text-decoration: none;
+  }
+
+  header {
+    display: flex;
+    justify-content: space-between; /* Aligns children to opposite ends */
+    align-items: center; /* Centers items vertically */
+    padding: 0 15px; /* Adds padding on both sides */
+}
+
+/* Adjust the SVG size and positioning */
+  header a {
+    flex-grow: 0; /* Prevents the SVG from growing */
+    flex-shrink: 0; /* Prevents the SVG from shrinking */
+    max-width: 180px; /* Adjust based on your SVG size */
+    order: -1; /* Positions the SVG to the left */
+  }
+
+  .hamburger-menu {
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end; /* Aligns the menu icon to the right */
+    flex-grow: 1; /* Allows the menu to take up available space */
+    margin-right: 50px;
+  } 
+
+  .hamburger-menu .fa-bars {
+    font-size: 24px; /* Increase the size of the icon */
+    color: black; /* Or any color you prefer */
+  }
+
+  .hamburger-menu-content {
+    display: block;
+    position: fixed;
+    top: 0;
+    right: -100%; /* start off-screen */
+    width: 50%;
+    height: 100%;
+    background:rgba(50, 60, 50, 0.95);
+    color: whitesmoke;
+    transition: right 0.5s;
+    padding: 2rem;
+    z-index: 100;
+  }
+
+  .hamburger-menu-content .menu-close {
+    text-align: right;
+    cursor: pointer;
+  }
+
+  .hamburger-menu-content .menu-link,
+  .hamburger-menu-content .contact-info-text {
+    display: block;
+    font-size: 1.2rem;
+    padding: 5px;
+    margin: 1rem;
+    color: white;
+    text-decoration: none;
+  }
+
+  .hamburger-menu-content ul {
+    list-style-type: none;
+  }
+
+  .hamburger-menu-content.active {
+    right: 0; /* show menu on right side*/
+  }
+
+  .hamburger-menu-content .menu-links-wrapper a:last-child {
+    border-bottom: 1px solid white;
+    margin-bottom: 10px;
+  }
+  
+  /* Main content container */
+  .container2 {
+    width: 90%;
+    margin: 0 auto;
+  }
+
+  .carousel-item {
+    height: auto;
+    max-height: 300px;
+  }
+
+  .carousel-item img {
+    width: 100%;
+    height: auto;
+  }
+
+  .carousel-caption h5 {
+    font-size: 1.3rem;
+  }
+  
+  .carousel-caption .btn {
+    font-size: 0.8rem;
+    padding: 5px;
+    display: inline-block;
+  }
+
+  /* Gallery */
+  .gallery-section {
+    width: 90%;
+    margin: 0 auto;
+    margin-top: 30px;
+  }
+
+  .image-row img {
+    max-height: 200px;
+  }
+
+  /* Footer adjustments */
+  footer {
+    padding: 10px;
+    font-size: 0.9rem;
+    margin-top: 30px;
+  }
+
+  .social_links {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .social_links p {
+    margin: 10px 0;
+  }
+}
+}

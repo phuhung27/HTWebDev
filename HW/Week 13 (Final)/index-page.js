@@ -6,6 +6,10 @@ document.addEventListener('DOMContentLoaded', function () {
       slidingHeading.style.transform = 'translateX(0%)';
   }
 
+  document.querySelector('.hamburger-menu').addEventListener('click', function() {
+    document.querySelector('nav ul').classList.toggle('active');
+  });
+
   // GSAP Animation
   // Timeline fade-in
   gsap.registerPlugin(ScrollTrigger);
@@ -14,8 +18,8 @@ function animateExperienceItem(item) {
   const tl = gsap.timeline({
     scrollTrigger: {
       trigger: item,
-      start: "top 70%",
-      toggleActions: "play none none none",
+      start: "top 70%", //detect when to start animating 
+      toggleActions: "play none none none", //only load once on load-in
     },
   });
 
@@ -27,18 +31,36 @@ function animateExperienceItem(item) {
 
   return tl;
 }
-
-const experienceItems = document.querySelectorAll(".table-row"); 
-
-experienceItems.forEach((item) => { //animate each experience
-  animateExperienceItem(item);
 });
 
-  // Hamburger Menu Toggle
-  const hamburger = document.querySelector('.hamburger-menu');
-  const navMenu = document.querySelector('nav ul');
+// Hamburger menu
+document.addEventListener("DOMContentLoaded", function () {
+  // Open
+  document
+    .querySelector(".hamburger-menu")
+    .addEventListener("click", function () {
+      document
+        .getElementById("hamburger-menu-content")
+        .classList.add("active"); //active makes hamburger menu content visible
+    });
 
-  hamburger.addEventListener('click', function() {
-      navMenu.style.display = navMenu.style.display === 'block' ? 'none' : 'block';
-  });
+  // Close
+  document
+    .querySelector(".menu-close")
+    .addEventListener("click", function () {
+      document
+        .getElementById("hamburger-menu-content")
+        .classList.remove("active");
+    });
+
+    // To ensure content closes after clicking on link
+  document
+    .querySelectorAll("#hamburger-menu-content a")
+    .forEach((link) => {
+      link.addEventListener("click", function () {
+        document
+          .getElementById("hamburger-menu-content")
+          .classList.remove("active"); 
+      });
+    });
 });

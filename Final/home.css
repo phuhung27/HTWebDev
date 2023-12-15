@@ -1,0 +1,532 @@
+@import url('https://fonts.googleapis.com/css2?family=EB+Garamond:wght@400;600&display=swap');
+
+html,
+body {
+  margin: 0;
+  font-family: 'EB Garamond', sans-serif;
+}
+
+h1 {
+  font-size: 2.5rem;
+  text-align: center;
+}
+
+h1 span {
+  color:rgb(19, 154, 78);
+}
+
+h3 {
+  font-size: 2rem;
+}
+
+.sliding-heading {
+  font-size: 2.5rem;
+  text-align: center;
+  overflow: hidden; /* Hide overflowing content */
+}
+
+.sliding-heading span {
+  display: inline-block;
+  transform: translateX(100%);
+  transition: transform 1.5s ease-in-out;
+}
+
+.sliding-heading span.slide-in {
+  transform: translateX(0%);
+}
+
+/* NAVBAR */
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 100px;
+  width: 100%;
+  border: solid 2px black;
+}
+
+header svg {
+  margin-left: 15px;
+  max-width: 180px;
+  height: 100%;
+}
+
+/* Signature animation */
+/* https://www.youtube.com/watch?v=dXMfOFHBqA8 */
+header svg path {
+  stroke-dasharray: 1500; /* dash length */
+  stroke-dashoffset: 1500; /* determine starting point / how much is shifted */
+  animation: drawSignature 5s forwards;
+}
+
+@keyframes drawSignature {
+  to {
+    stroke-dashoffset: 0;
+  }
+} 
+/* End of signature */
+
+nav ul {
+  display: flex;
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  align-items: center;
+  justify-content: center;
+  height: 100px;
+}
+
+nav li {
+  font-size: 1.25rem;
+  width: 150px; 
+  text-align: center; 
+}
+
+nav a {
+  text-decoration: none;
+  color: #333;
+  background-color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: all 1s;
+  height: 100px;
+}
+
+nav a:hover {
+  background-color: rgb(105, 150, 105);
+}
+
+nav .dropdown {
+  display: none;
+  position: absolute;
+}
+
+nav li:hover .dropdown {
+  display: block; 
+}
+
+nav li a.active {
+  text-decoration: underline;
+}
+
+.hamburger-menu {
+  display: none;
+}
+
+.hamburger-menu-content {
+  display: none;
+}
+
+/*-----------------------------------------------------------------------------------*/
+/* Container */
+.container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  margin-top: 2%;
+  margin-bottom: 7%;
+}
+  
+.container2 {
+  width: 90%;
+  text-align: center;
+  margin: 0 auto;
+}
+
+/*-----------------------------------------------------------------------------------*/
+/* About Section */
+.description {
+  width: 45%;
+  padding-left: 3%;
+  color: black;
+}
+
+.container article {
+  width: 45%;
+}
+
+.description h3 {
+  font-size: 3rem;
+  text-align: center;
+}
+
+article img {
+  border-radius: 20%;
+}
+
+.description p {
+  font-size: 1.5rem;
+  margin-bottom: 20px;
+  width: 70%;
+  margin: 0 auto;
+}
+
+/*-----------------------------------------------------------------------------------*/
+/* View Resume Button */
+.view-resume {
+  background-color: rgb(19, 154, 78);
+  width: 15%;
+  text-align: center;
+  padding: 10px;
+  margin: 10px auto;
+  margin-bottom: 30px;
+}
+
+.view-resume a {
+  text-decoration: none;
+  color: white;
+  font-weight: bold;
+  font-size: 1.25rem;
+  display: inline-block;
+  width: 100%;
+}
+
+/*-----------------------------------------------------------------------------------*/
+/* Experience Section Styling */
+.portfolio-table {
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+}
+
+.table-header {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px;
+  border-bottom: 2px solid rgb(41, 41, 41);
+}
+
+.table-row {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px;
+  border-bottom: 1px solid #ddd;
+}
+
+.table-cell {
+  flex: 1; 
+  padding: 5px;
+  font-size: 1.2rem;
+  font-weight: bold;
+}
+
+.cell-text {
+  font-size: 1.4rem;
+  font-weight: normal;
+}
+
+.VDSC-logo {
+  display: block;
+  max-width: 200px;
+  margin: 0 auto;
+  margin-top: 5px;
+}
+
+.AIA-logo {
+  display: block;
+  max-width: 140px;
+  margin: 0 auto;
+}
+
+.VSA-logo {
+  display: block;
+  max-width: 70px;
+  margin: 0 auto;
+  margin-top: 10px;
+}
+
+/* Additional Info Section */
+.additional-info {
+  display: flex;
+  flex-direction: row;
+}
+
+.additional-info-section {
+  width: 30%;
+  background-color: #f0f0f0;
+  margin: 10px;
+  padding: 20px;
+  border-radius: 10px;
+  margin-bottom: 20px;
+}
+
+.additional-info-section h3 {
+  font-size: 1.8rem;
+  margin-bottom: 10px;
+  color: rgb(19, 154, 78);
+}
+
+.additional-info-section ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.additional-info-section ul li {
+  font-size: 1.4rem;
+  margin: 10px 0;
+}
+
+/*-----------------------------------------------------------------------------------*/
+/* Connect form */
+#connect-section {
+  text-align: center;
+  margin: 0 auto;
+  max-width: 50%;
+}
+
+.form-content {
+  margin-bottom: 20px;
+  text-align: left;
+}
+
+.form-content label {
+  display: block;
+  margin-bottom: 5px;
+  font-size: 1.25rem;
+}
+
+.form-content input {
+  width: 100%;
+  padding: 10px;
+  border: none;
+  border-bottom: 1px solid grey; 
+}
+
+button[type="submit"] {
+  background-color: #19a66e;
+  font-family: 'EB Garamond', sans-serif;
+  font-size: 1.1rem;
+  color: whitesmoke;
+  padding: 15px;
+  border-radius: 5px;
+  font-weight: bold;
+  margin-bottom: 50px;
+  transition: transform 0.5s ease;
+}
+
+button[type="submit"]:hover {
+  background-color: #137a4e;
+  transform: scale(1.1);
+}
+
+/* ------------------------------------------------------------------------------------------- */
+/* FOOTER */
+footer {
+  background-color: rgb(62, 62, 62);
+  color: whitesmoke;
+  text-align: center;
+  font-size: 1.1rem;
+  width: 100%;
+  padding: 1%;
+}
+
+.social-links {
+  display: flex;  
+  justify-content: center;
+}
+
+.social-links p {
+  color: whitesmoke;
+  font-size: 1.1rem;
+  padding: 0 2%;
+}
+
+.fa-phone {
+  font-size: 1.5rem;
+  color: #48e963;
+}
+
+.fa-envelope {
+  font-size: 1.5rem;
+  color: #fedd03;
+
+}
+
+.fa-linkedin {
+  font-size: 2rem;
+  color: #0b65c2; 
+}
+
+footer a {
+  text-decoration: none;
+  color: white;
+}
+
+/* ------------------------------------------------------------------------------------------- */
+/* Media Queries */
+/* For phone */
+@media screen and (max-width: 767px) {
+  nav ul {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    background-color: #fff;
+    z-index: 99;
+    padding: 10px 0;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+  }
+
+  nav ul.active {
+    display: block;
+  }
+
+  nav ul li {
+    display: block;
+    text-align: center;
+    border-top: 1px solid #ddd;
+  }
+
+  nav ul li a {
+    display: block;
+    padding: 10px;
+    color: #333;
+    text-decoration: none;
+  }
+
+  header {
+    display: flex;
+    justify-content: space-between; /* signature & menu on opposite ends */
+    align-items: center;
+    padding: 0 15px;
+  }
+
+  header a {
+    flex-grow: 0;
+    flex-shrink: 0;
+    max-width: 180px;
+    order: -1; /* signature stays on left */
+  }
+
+  .hamburger-menu {
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end; /* menu stays on right */
+    flex-grow: 1;
+    margin-right: 50px;
+  } 
+
+  .hamburger-menu .fa-bars {
+    font-size: 25px;
+    color: black;
+  }
+
+  /* Textbox area for menu content */
+  .hamburger-menu-content {
+    display: block;
+    position: fixed;
+    top: 0;
+    right: -100%; /* start off-screen */
+    width: 50%; 
+    height: 100vh;
+    background:rgba(50, 60, 50, 0.95);
+    color: whitesmoke;
+    transition: right 0.5s;
+    padding: 2rem;
+    z-index: 100; /* ensure above all elements */
+  }
+
+  .hamburger-menu-content .menu-close {
+    text-align: right;
+    cursor: pointer;
+  }
+
+  /* Actual text in hamburger menu content */
+  .hamburger-menu-content .menu-link,
+  .hamburger-menu-content .contact-info-text {
+    display: block;
+    font-size: 1.2rem;
+    padding: 5px;
+    margin: 1rem;
+    color: white;
+    text-decoration: none;
+  }
+
+  .hamburger-menu-content ul {
+    list-style-type: none;
+  }
+
+  .hamburger-menu-content.active {
+    right: 0; /* show menu on right side */
+  }
+
+  /* Add border-bottom to text */
+  .hamburger-menu-content .menu-links-wrapper a:last-child {
+    border-bottom: 1px solid white;
+    margin-bottom: 10px;
+  }
+
+/* ----------------------------------------- */
+
+  .container, .container2, .description {
+    width: 100%;
+  }
+
+  .container article {
+    width: 100%;
+    display: flex; 
+    justify-content: center;
+    align-items: center;
+  }
+
+  .container article img {
+    max-width: 70%;
+    height: auto;
+  }
+
+  .description p {
+    margin-bottom: 30px;
+  }
+
+  .description article img {
+    max-height: 100px;
+    width: auto;
+    margin: 0 auto;
+  }
+
+  /* Experience Table */
+  .portfolio-table {
+    width: 90%;
+    align-items: center;
+  }
+
+  .table-row {
+    flex-direction: column;
+  }
+
+  .table-cell {
+    padding: 10px;
+    font-size: 1.2rem;
+  }
+
+  /* Additional Info  */
+  .additional-info {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .additional-info-section {
+    width: 70%; /* Adjust width as needed */
+    margin: 10px auto;
+  }
+
+  /* Footer adjustments */
+  footer {
+    font-size: 1rem;
+    padding: 20px;
+  }
+
+  .social-links {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .social-links p {
+    padding: 0.5rem 0;
+  }
+}
